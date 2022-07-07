@@ -3,6 +3,6 @@
 
 #define PUBLIC 
 
-PUBLIC void convert(x);
+PUBLIC int convert(x);
 
 #endif
