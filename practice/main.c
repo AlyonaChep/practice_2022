@@ -9,14 +9,14 @@ int main(void)
 {
 	setlocale(LC_CTYPE, "Ukr"); // зміна кодової таблиці символів
 	int hour, min; // година, хвилина
-	const char* ending_arr[] = { " ", "а ", "и " }; // закінчення для годин та хвилин
+	const char* ending_arr[] = { "", "а", "и" }; // закінчення для годин та хвилин
 	// ввод 
 	printf("Введiть час: ");
 	scanf("%d %d", &hour, &min);
 	// вивод
 	printf("Введений час: ");
-	printf("годин%c", *ending_arr[convert(hour)]);
-	printf("хвилин%c", *ending_arr[convert(min)]);
+	printf("годин%c ", *ending_arr[convert(hour)]);
+	printf("хвилин%c ", *ending_arr[convert(min)]);
 	printf("\n");
 
 	return 0;
