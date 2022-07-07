@@ -12,7 +12,7 @@ int main(void)
 	const char* ending_arr[] = { " ", "а ", "и " }; // зак≥нченн€ дл€ годин та хвилин
 	// ввод 
 	printf("¬ведiть час: ");
-	scanf("%i %i", &hour, &min);
+	scanf("%d %d", &hour, &min);
 	// вивод
 	printf("¬ведений час: ");
 	printf("годин%c", *ending_arr[convert(hour)]);
