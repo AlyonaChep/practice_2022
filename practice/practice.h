@@ -1,8 +1,10 @@
 #ifndef PRACTICE_H
 #define PRACTICE_H
 
-#define PUBLIC 
+#define PUBLIC
+#define ERRORRANGE -1
 
-PUBLIC int convert(x);
+PUBLIC int correct(int hour, int min);
+PUBLIC int convert(int x);
 
 #endif

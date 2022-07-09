@@ -11,13 +11,13 @@ int main(void)
 	int hour, min; // година, хвилина
 	const char* ending_arr[] = { "", "а", "и" }; // зак≥нченн€ дл€ годин та хвилин
 	// ввод 
-	printf("¬ведiть час: ");
-	scanf("%d %d", &hour, &min);
+	do {
+		printf("¬ведiть корректний час: ");
+		scanf("%d %d", &hour, &min);
+	} while (correct(hour, min) == ERRORRANGE); // перев≥рка д≥апазону
 	// вивод
 	printf("¬ведений час: ");
 	printf("годин%c ", *ending_arr[convert(hour)]);
-	printf("хвилин%c ", *ending_arr[convert(min)]);
-	printf("\n");
-
+	printf("хвилин%c\n", *ending_arr[convert(min)]);
 	return 0;
 }

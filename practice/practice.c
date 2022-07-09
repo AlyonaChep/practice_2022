@@ -5,7 +5,12 @@
 #include <locale.h>
 #include "practice.h"
 
-int convert(x)
+int correct(int hour, int min)
+{
+    return (hour >= 0 && hour < 24) && (min >= 0 && min < 60) ? 1 : ERRORRANGE;
+}
+
+int convert(int x)
 {
     const char* units_arr[] = { "нуль", "одна", "двi", "три", "чотири", "п'€ть", "шiсть", "сiм", "вiсiм", "дев'€ть" }; // масив 0-9
     const char* teens_arr[] = { "одинадц€ть", "дванадц€ть", "тринадц€ть", "чотирнадц€ть", "п'€тнадц€ть", "шiстнадц€ть", "сiмнадц€ть", "вiсiмнадц€ть", "дев'€тнадц€ть" }; // масив 11-19
