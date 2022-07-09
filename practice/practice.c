@@ -1,7 +1,5 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 #include <locale.h>
 #include "practice.h"
 
@@ -37,11 +35,14 @@ int convert(int x)
                 case 9: printf("%s ", teens_arr[8]); break; // 19
                 default: printf(""); break;
             } goto exit; break;
-        case 2: printf("%s ", tens_arr[1]); 
-            if (!units) goto exit; break; // 20
-        case 3: printf("%s ", tens_arr[2]); break; // 30
-        case 4: printf("%s ", tens_arr[3]); break; // 40
-        case 5: printf("%s ", tens_arr[4]); break; // 50
+        case 2: printf("%s ", tens_arr[1]); // 20
+            if (!units) goto exit; break;   // захист від зайвих нулей 
+        case 3: printf("%s ", tens_arr[2]); // 30
+            if (!units) goto exit; break;   // захист від зайвих нулей 
+        case 4: printf("%s ", tens_arr[3]); // 40
+            if (!units) goto exit; break;   // захист від зайвих нулей 
+        case 5: printf("%s ", tens_arr[4]); // 50
+            if (!units) goto exit; break;   // захист від зайвих нулей 
         default: printf(""); break;
     }
     switch (units)
