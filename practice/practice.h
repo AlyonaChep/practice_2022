@@ -18,6 +18,6 @@ PUBLIC int correct(int hour, int min);
 * @param х число
 * @return ending число
 */
-PUBLIC int convert(int x);
+PUBLIC int convert(int x, char* result);
 
 #endif
