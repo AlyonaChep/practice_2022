@@ -8,6 +8,9 @@ int main(void)
 	setlocale(LC_CTYPE, "Ukr"); // зміна кодової таблиці символів
 	int hour, min; // змінні для годин, хвилин
 	const char* ending_arr[] = { "", "а", "и" }; // масив закінчень для годин та хвилин
+	int ending = 0; // значення індексу
+	char hour_res[20] = ""; // масив результату перетворення годин
+	char min_res[20] = ""; // масив результату перетворення хвилин
 	// ввод 
 	do {
 		printf("Введiть корректний час: ");
@@ -15,8 +18,11 @@ int main(void)
 	} while (correct(hour, min) == ERRORRANGE); // перевірка діапазону
 	// вивод
 	printf("Введений час: ");
-	printf("годин%c ", *ending_arr[convert(hour)]);  // | виклик функції, її вивод 
-	printf("хвилин%c\n", *ending_arr[convert(min)]); // | та обрання потрібного закінчення
+	// виклик функції, її вивод та обрання потрібного закінчення
+	ending = convert(hour, hour_res);
+	printf("%s годин%c ", hour_res, *ending_arr[ending]);
+	ending = convert(min, min_res);
+	printf("%s хвилин%c \n", min_res, *ending_arr[ending]);
 	// завершення функції
 	return 0;
 }
