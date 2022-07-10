@@ -36,18 +36,17 @@ int convert(int x, char* result)
                 case 8: strcat(result, teens_arr[7]); break; // 18
                 case 9: strcat(result, teens_arr[8]); break; // 19
                 default: printf(""); break;
-            } goto exit; break;
-        case 2: strcat(result, tens_arr[1]); // 20
+            } strcat(result, " "); goto exit; break;
+        case 2: strcat(result, tens_arr[1]); strcat(result, " "); // 20
             if (!units) goto exit; break;   // захист від зайвих нулей 
-        case 3: strcat(result, tens_arr[2]); // 30
+        case 3: strcat(result, tens_arr[2]); strcat(result, " "); // 30
             if (!units) goto exit; break;   // захист від зайвих нулей 
-        case 4: strcat(result, tens_arr[3]); // 40
+        case 4: strcat(result, tens_arr[3]); strcat(result, " "); // 40
             if (!units) goto exit; break;   // захист від зайвих нулей 
-        case 5: strcat(result, tens_arr[4]); // 50
+        case 5: strcat(result, tens_arr[4]); strcat(result, " "); // 50
             if (!units) goto exit; break;   // захист від зайвих нулей 
         default: printf(""); break;
     }
-    strcat(result, " ");
     switch (units)
     {
         case 0: strcat(result, units_arr[0]); break; // 0
