@@ -1,27 +1,35 @@
 #include "pch.h"
 #include "../practice/practice.c"
 
-TEST(CorrectTest, IncorrectHours) {
+TEST(CorrectTest, Incorrect) {
   EXPECT_EQ(correct(25, 53), -1);
-  EXPECT_EQ(correct(-5, 26), -1);
+  EXPECT_EQ(correct(05, -36), -1);
   EXPECT_EQ(correct(68, 11), -1);
+  EXPECT_EQ(correct(-12, 77), -1);
 }
-
-TEST(CorrectTest, IncorrectMinutes) {
-	EXPECT_EQ(correct(12, 68), -1);
-	EXPECT_EQ(correct(05, -36), -1);
-	EXPECT_EQ(correct(22, 89), -1);
-}
-
-TEST(CorrectTest, BothIncorrect) {
-	EXPECT_EQ(correct(26, 86), -1);
-	EXPECT_EQ(correct(93, -6), -1);
-	EXPECT_EQ(correct(-12, 77), -1);
-}
-
-TEST(CorrectTest, BothCorrect) {
+TEST(CorrectTest, Correct) {
 	EXPECT_EQ(correct(10, 58), 1);
 	EXPECT_EQ(correct(15, 00), 1);
 	EXPECT_EQ(correct(03, 27), 1);
+}
+
+TEST(ConvertTest, Hours) {
+	char hour_res[20] = ""; // масив результату перетворенн€ годин
+	convert(15, hour_res);
+	EXPECT_STREQ(hour_res, "п'€тнадц€ть ");
+}
+
+TEST(ConvertTest, Minutes) {
+	char min_res[20] = ""; // масив результату перетворенн€ хвилин
+	convert(0, min_res);
+	EXPECT_STREQ(min_res, "нуль");
+}
+
+TEST(ConvertTest, Endings) {
+	const char ending_arr[] = { '\0', 'а', 'и' }; // масив зак≥нчень дл€ годин та хвилин
+	int ending = 0; // значенн€ ≥ндексу
+	char hour_res[20] = ""; // масив результату перетворенн€ годин
+	ending = convert(23, hour_res);
+	EXPECT_EQ(ending_arr[ending], 'и');
 }
 
