@@ -8,7 +8,7 @@
 * Функція перевірки діапазону
 *
 * @param hour число, min число
-* @return (hour >= 0 && hour < 24) && (min >= 0 && min < 60) значення виразу
+* @return 1 або -1 залежно від значення виразу
 */
 PUBLIC int correct(int hour, int min);
 
