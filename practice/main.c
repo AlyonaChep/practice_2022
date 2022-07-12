@@ -13,7 +13,7 @@ int main(void)
 	char min_res[20] = ""; // масив результату перетворенн€ хвилин
 	// ввод 
 	do {
-		printf("¬ведiть корректний час: ");
+		printf("¬ведiть коректний час: ");
 		scanf("%d %d", &hour, &min);
 	} while (correct(hour, min) == ERRORRANGE); // перев≥рка д≥апазону
 	// вивод
