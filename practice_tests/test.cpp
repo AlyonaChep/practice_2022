@@ -14,21 +14,21 @@ TEST(CorrectTest, Correct) {
 }
 
 TEST(ConvertTest, Hours) {
-	char hour_res[20] = ""; // масив результату перетворенн€ годин
+	char hour_res[20] = ""; 
 	convert(15, hour_res);
-	EXPECT_STREQ(hour_res, "п'€тнадц€ть ");
+	EXPECT_STREQ(hour_res, "п'€тнадц€ть");
 }
 
 TEST(ConvertTest, Minutes) {
-	char min_res[20] = ""; // масив результату перетворенн€ хвилин
+	char min_res[20] = "";
 	convert(0, min_res);
 	EXPECT_STREQ(min_res, "нуль");
 }
 
 TEST(ConvertTest, Endings) {
-	const char ending_arr[] = { '\0', 'а', 'и' }; // масив зак≥нчень дл€ годин та хвилин
-	int ending = 0; // значенн€ ≥ндексу
-	char hour_res[20] = ""; // масив результату перетворенн€ годин
+	const char ending_arr[] = { '\0', 'а', 'и' };
+	int ending = 0;
+	char hour_res[20] = ""; 
 	ending = convert(23, hour_res);
 	EXPECT_EQ(ending_arr[ending], 'и');
 }
